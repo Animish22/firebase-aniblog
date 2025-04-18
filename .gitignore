@@ -1,0 +1,46 @@
+# Ignore Node.js modules
+# Keep this line as it is crucial to ignore installed dependencies
+node_modules/
+
+# Ignore build/dist directories
+# These are generated files and should not be tracked
+dist/
+build/
+out/
+
+# Ignore environment files
+# Contains sensitive information or local configuration
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+# Add any other .env related files
+
+# Ignore log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
+
+# Ignore test coverage reports
+coverage/
+
+# Ignore OS specific files
+.DS_Store # macOS
+Thumbs.db # Windows
+ehthumbs.db # Windows
+.Spotlight-V100 # macOS
+.Trashes # macOS
+# Icon? # macOS
+
+# Ignore editor/IDE specific files
+.vscode/      # Visual Studio Code
+.idea/        # IntelliJ IDEA / WebStorm
+*.sublime-project # Sublime Text
+*.sublime-workspace # Sublime Text
+.settings/    # Eclipse
+.project      # Eclipse
+.buildpath    # Eclipse
