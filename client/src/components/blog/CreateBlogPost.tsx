@@ -54,7 +54,7 @@ function CreateBlogPost() {
 
     try {
       // --- Step 1: Upload file to backend (Multer + Cloudinary) ---
-      const uploadEndpointUrl = 'http://localhost:3000/imageUrl'; // Replace with your backend upload endpoint URL
+      const uploadEndpointUrl = `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/imageUrl`; // Replace with your backend upload endpoint URL
 
       const uploadResponse = await fetch(uploadEndpointUrl, {
         method: 'POST',

@@ -143,7 +143,7 @@ function EditBlogPost() {
     try {
       // --- Step 1: Upload New File if one was selected ---
       if (thumbnailFile) {
-        const uploadEndpointUrl = 'http://localhost:3000/imageUrl'; 
+        const uploadEndpointUrl = `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/imageUrl`; 
 
         const formData = new FormData();
         formData.append('thumbnailFile', thumbnailFile); 
