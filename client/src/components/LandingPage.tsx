@@ -91,7 +91,7 @@ const LandingPage: React.FC = () => {
                 {/* Replace with a compelling image or illustration */}
                 <div className="relative rounded-lg overflow-hidden shadow-lg aspect-video">
                   <img
-                    src="src\images\LandingPageImg.jpeg"
+                    src="https://res.cloudinary.com/dnsdaqdyg/image/upload/v1745078383/LandingPageImg_mntnxk.jpg"
                     alt="Blog Concept"
                     className="object-cover w-full h-full"
                   />
