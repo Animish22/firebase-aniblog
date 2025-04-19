@@ -2,9 +2,9 @@ import express from "express"
 import multer from "multer"
 import cors from "cors"
 import * as trpcExpress from '@trpc/server/adapters/express';
-import { appRouter } from './index'
+// import { appRouter } from './index'
 import asyncHandler from 'express-async-handler';
-import { createContext } from "./trpc";
+// import { createContext } from "./trpc";
 import { v2 as cloudinary, UploadApiErrorResponse, UploadApiResponse } from 'cloudinary'
 import dotenv from "dotenv"
 
@@ -87,13 +87,13 @@ app.post('/imageUrl', upload.single('thumbnailFile'), asyncHandler(async (req, r
 );
 
 
-app.use(
-  '/trpc',
-  trpcExpress.createExpressMiddleware({
-    router: appRouter,
-    createContext
-  }),
-);
+// app.use(
+//   '/trpc',
+//   trpcExpress.createExpressMiddleware({
+//     router: appRouter,
+//     createContext
+//   }),
+// );
 
 
 app.listen(3000, () => {
