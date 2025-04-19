@@ -1,0 +1,29 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: firebase-blog-backend-dep 
+  namespace: firebase-blog
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: firebase-blog-backend 
+  template: 
+    metadata:
+      name: firebase-blog-backend-pod 
+      labels: 
+        app: firebase-blog-backend
+    spec:
+      containers:
+      - name: firebase-blog-backend-container   
+        image: animishsharma/firebase_blog-backend:latest
+        env:
+        - name: CLOUDINARY_CLOUD_NAME
+          value: <Your_Cloudinary_Name>
+        - name: CLOUDINARY_API_KEY
+          value: <Your_Cloudinary_Api_Key>
+        - name: CLOUDINARY_API_SECRET
+          value: <Your_Cloudinary_Api_Secret>
+        ports:
+        - containerPort: 3000 
+      

@@ -1,0 +1,18 @@
+# Volume directory is created here to ensure smooth development experience . That is if I make a change in frontend from my system then it will be updated through volume in the /app/data directory of the container and vite will detect the change and do HMR  for the container 
+
+ARG NODE_VERSION=20-alpine
+FROM node:${NODE_VERSION}
+
+WORKDIR /app 
+
+COPY package*.json .
+
+RUN npm install 
+
+RUN mkdir -p /app/data 
+
+COPY . .
+
+EXPOSE 5173 
+
+CMD ["npm", "run", "dev"]

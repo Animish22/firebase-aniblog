@@ -1,0 +1,16 @@
+# I am not creating a directory for volumes in backend because in this project the backend is only for the file upload endpoint and the updated data will be stored in firestore(Firebase Database) . Not used in K8s deployment yet. 
+
+ARG NODE_VERSION=20-alpine
+FROM node:${NODE_VERSION}
+
+WORKDIR /app
+
+COPY package*.json . 
+
+RUN npm install 
+
+COPY . .    
+
+EXPOSE 3000
+
+CMD [ "npm" , "run" , "start" ]

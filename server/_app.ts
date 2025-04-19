@@ -24,6 +24,8 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
+// We cannot use multer within trpc as multer is an express Middleware which needs to be executed before we hand control to trpc , therefore we always have to create a separate file endpoint when using multer a
+
 // @ts-ignore 
 app.post('/imageUrl', upload.single('thumbnailFile'), asyncHandler(async (req, res) => {
   // Access the file buffer from req.file

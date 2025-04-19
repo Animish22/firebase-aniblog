@@ -1,0 +1,35 @@
+version: "3.8"
+services:
+  frontend:
+    depends_on:
+    - backend
+    build: ./client
+    ports:
+    - "5173:5173"
+    develop:
+      watch:
+      - path: ./client/package.json
+        action: rebuild
+      - path: ./client/package-lock.json
+        action: rebuild
+      - path: ./client
+        target: /app
+        action: sync
+
+  backend:
+    build: ./server
+    ports:
+    - "3000:3000"
+    environment:
+      CLOUDINARY_CLOUD_NAME: <Your_Cloudinary_Name>
+      CLOUDINARY_API_KEY: <Your_Cloudinary_Api_Key>
+      CLOUDINARY_API_SECRET: <Your_Cloudinary_Api_Secret>
+    develop:
+      watch:
+        - path: ./server/package.json
+          action: rebuild
+        - path: ./server/package-lock.json
+          action: rebuild
+        - path: ./server
+          target: /app
+          action: sync

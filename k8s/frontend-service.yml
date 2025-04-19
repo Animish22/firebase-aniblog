@@ -1,0 +1,12 @@
+kind: Service 
+apiVersion: v1 
+metadata: 
+  name: firebase-blog-frontend-service
+  namespace: firebase-blog
+spec:
+  selector:
+    app: firebase-blog-frontend
+  ports:
+  - protocol: TCP 
+    port: 5173
+    targetPort: 5173

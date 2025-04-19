@@ -36,8 +36,7 @@ function EditBlogPost() {
   const [error, setError] = useState<string | null>(null); // For displaying errors (fetch or auth)
 
   // Get the current authenticated user
-  // Note: In a real app, you'd get this from your AuthProvider or onAuthStateChanged listener
-  // For simplicity here, we'll access it directly, but rely on the AuthProvider context
+
   const currentUser: User | null | undefined = user;
 
 

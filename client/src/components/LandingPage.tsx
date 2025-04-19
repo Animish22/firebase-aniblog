@@ -67,7 +67,6 @@ const blogPreviews = [
 ];
 
 const LandingPage: React.FC = () => {
-  console.log(auth?.currentUser);
   return (
     <ScrollArea className="h-screen">
       <div className="flex flex-col min-h-screen">

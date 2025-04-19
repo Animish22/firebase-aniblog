@@ -1,0 +1,22 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: firebase-blog-frontend-dep 
+  namespace: firebase-blog
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: firebase-blog-frontend 
+  template: 
+    metadata:
+      name: firebase-blog-frontend-pod 
+      labels: 
+        app: firebase-blog-frontend
+    spec:
+      containers:
+      - name: firebase-blog-frontend-container   
+        image: animishsharma/firebase_blog-frontend:latest
+        ports:
+        - containerPort: 5173 
+      
