@@ -31,11 +31,11 @@ export default function BlogPostCard({ id, imageUrl, title, content, canEdit = f
               className="flex items-center justify-center p-1 bg-gray-800/50 text-gray-50 rounded-md transition-colors hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
               aria-label={`Edit blog post "${title}"`} // Accessibility
             >
-              <Pencil1Icon className="w-5 h-5" /> 
+            <Pencil1Icon className="w-5 h-5" />
             </button>
           </Link>
         )}
-      
+        
         <div className="absolute w-full h-full top-0 left-0 transition duration-300 group-hover/card:bg-black opacity-60"></div>
         <div className="text content">
           <h1 className="font-bold text-xl md:text-2xl text-gray-50 relative z-10">

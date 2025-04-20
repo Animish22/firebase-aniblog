@@ -84,7 +84,8 @@ function CreateBlogPost() {
         title: title,
         content: content,
         imageUrl: imageUrl, // Use the URL received from the backend
-        rating: 5, // Set initial rating
+        rating: 5, // Set Total rating
+        ratedBy: [], // userId of users who have rated this post 
         createdAt: serverTimestamp(), // Firestore server timestamp
         updatedAt: serverTimestamp(), // Firestore server timestamp
       };

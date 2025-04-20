@@ -12,6 +12,7 @@ interface UserBlogInfo {
   content: string,
   imageUrl: string,
   rating:number,
+  ratedBy: string[],
   id: string
 }
 
@@ -35,7 +36,7 @@ const UserProfilePage: React.FC = () => {
           blogs.forEach(blog => {
             if(blog.data().userID === user?.uid) 
             {
-              const data = { title: blog.data().title, content: blog.data().content, imageUrl: blog.data().imageUrl, id: blog.id , rating: blog.data().rating };
+              const data = { title: blog.data().title, content: blog.data().content, imageUrl: blog.data().imageUrl, id: blog.id , rating: blog.data().rating , ratedBy: blog.data().ratedBy };
               AllUserBlogs.push(data);
             }
           })
@@ -62,7 +63,12 @@ const UserProfilePage: React.FC = () => {
 
   // Calculate average rating
   const totalRating = userBlogInfo.reduce((sum, blog) => sum + blog.rating, 0);
-  const averageRating = userBlogInfo.length > 0 ? totalRating / userBlogInfo.length : 0;
+  const totalRatingCount = userBlogInfo.reduce((sum, blog) => sum + (blog.ratedBy?.length ?? 0), 0);
+
+  // console.log(totalRating)
+  // console.log(totalRatingCount)
+
+  const averageRating = totalRatingCount > 0 ? totalRating / totalRatingCount : 0;
   const roundedAverageRating = Math.round(averageRating);
 
   // Function to render star icons based on the rating
