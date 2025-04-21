@@ -17,13 +17,15 @@ spec:
       containers:
       - name: firebase-blog-backend-container   
         image: animishsharma/firebase_blog-backend:latest
-        env:
-        - name: CLOUDINARY_CLOUD_NAME
-          value: <Your_Cloudinary_Name>
-        - name: CLOUDINARY_API_KEY
-          value: <Your_Cloudinary_Api_Key>
-        - name: CLOUDINARY_API_SECRET
-          value: <Your_Cloudinary_Api_Secret>
+        
+        # Done using jenkins deployment now 
+        # env:
+        # - name: CLOUDINARY_CLOUD_NAME
+        #   value: <Your_Cloudinary_Name>
+        # - name: CLOUDINARY_API_KEY
+        #   value: <Your_Cloudinary_Api_Key>
+        # - name: CLOUDINARY_API_SECRET
+        #   value: <Your_Cloudinary_Api_Secret>
         ports:
         - containerPort: 3000 
       
